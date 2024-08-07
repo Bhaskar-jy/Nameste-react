@@ -32,3 +32,12 @@ This is a Repository for React Course
 - JSX is a convention where it marges html and javascript
 - JSX is not HTML in JavaScript -> it is HTML like syntex
 - JSX is used to create react objects to use HTML Elements
+
+# Bable
+
+- Bable is a JavaScript Compiler
+- Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments
+- Transform syntax
+- Polyfill features that are missing in your target environment
+- Source code transformations (codemods)
+- Babel can convert JSX syntax!
