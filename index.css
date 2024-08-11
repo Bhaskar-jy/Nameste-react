@@ -1,3 +1,7 @@
+.body {
+  background: rgb(241, 148, 129);
+  border-radius: 10;
+}
 .header {
   border-radius: 10;
   display: fles;
@@ -39,11 +43,17 @@
   cursor: pointer;
   border: 1px solid black;
 }
-.searchbar {
+.filter-btn {
   border: 1px solid black;
   border-radius: 10;
+  margin: 10px;
+  cursor: pointer;
   padding: 10px;
   width: 300px;
+}
+.filter-btn :hover {
+  cursor: pointer;
+  background: rgb(248, 46, 6);
 }
 .res-log {
   width: 100%;

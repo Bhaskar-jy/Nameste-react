@@ -41,3 +41,39 @@ This is a Repository for React Course
 - Polyfill features that are missing in your target environment
 - Source code transformations (codemods)
 - Babel can convert JSX syntax!
+
+# KhaKuwa Foods
+
+/\*
+\*Header
+
+- - Logo
+- - Nev Bar
+    \*Body
+- - Search
+- - Restorant Container
+- - Restorant Cards
+-        - image
+-        - name of res, star rating, cusine, dilivery time
+  \*Footer
+- - Copyright
+- - Address
+- https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/6e04be27387483a7c00444f8e8241108
+- - COntacts
+    \*/
+
+There are two types of Export/Import
+
+- Default Export/Import
+  export default Component
+  import from "path"
+
+- Named Export/Import
+  export const Component
+  import {Component} from "path"
+
+# React Hooks
+
+- Hook are normal JS utility funxtions
+- Two very important functions - useState()-> used to generate Superperful State Variables in react
+  -whenever a state variable is update react will rerander the components - useEffect()
