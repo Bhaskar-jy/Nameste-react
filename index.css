@@ -1,4 +1,5 @@
 .header {
+  border-radius: 10;
   display: fles;
   justify-content: space-between;
   border: 1px solid black;
@@ -23,21 +24,26 @@
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  border-radius: 10;
   padding: 5px;
 }
 .res-card {
+  border-radius: 10;
   padding: 10px;
   width: 200px;
-  height: 300px;
+
   margin: 10px;
-  background: teal;
+  background: rgb(248, 46, 6);
 }
 .res-card:hover {
   cursor: pointer;
   border: 1px solid black;
 }
 .searchbar {
+  border: 1px solid black;
+  border-radius: 10;
   padding: 10px;
+  width: 300px;
 }
 .res-log {
   width: 100%;
