@@ -1,10 +1,11 @@
 .body {
-  background: rgb(241, 148, 129);
+  background: rgb(213, 211, 210);
   border-radius: 10;
 }
 .header {
   border-radius: 10;
   display: fles;
+  background: rgb(154, 153, 152);
   justify-content: space-between;
   border: 1px solid black;
 }
@@ -24,7 +25,6 @@
   margin: 10px;
 }
 .res-container {
-  border: 1px solid magenta;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -34,8 +34,8 @@
 .res-card {
   border-radius: 10;
   padding: 10px;
-  width: 200px;
-
+  width: 300px;
+  height: 500px;
   margin: 10px;
   background: rgb(248, 46, 6);
 }
