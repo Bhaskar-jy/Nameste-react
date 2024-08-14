@@ -4,7 +4,7 @@
 }
 .header {
   border-radius: 10;
-  display: fles;
+  display: flex;
   background: rgb(154, 153, 152);
   justify-content: space-between;
   border: 1px solid black;
@@ -43,6 +43,14 @@
   cursor: pointer;
   border: 1px solid black;
 }
+.Smrfilter-btn {
+  background: rgb(179, 178, 178);
+  border-radius: 10;
+  margin: 10px;
+  cursor: pointer;
+  padding: 10px;
+  width: 300px;
+}
 .filter-btn {
   border: 1px solid black;
   border-radius: 10;
@@ -72,5 +80,38 @@
   width: 300px;
   height: 500px;
   margin: 10px;
-  background: rgb(142, 141, 141);
+  background: rgb(179, 178, 178);
+}
+.login {
+  padding: 0 20px;
+  cursor: pointer;
+  border-radius: 10;
+}
+.list {
+  border-radius: 10;
+  padding: 10px;
+  margin: 10px;
+}
+.list :hover {
+  cursor: pointer;
+  border: 1px solid black;
+  background: rgb(248, 46, 6);
+}
+.filter {
+  display: flex;
+}
+.search-box {
+  border: 1px solid black;
+  border-radius: 10;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 10px;
+  width: 300px;
+}
+.serchbtn {
+  border: 1px solid black;
+  border-radius: 10;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 10px;
 }
