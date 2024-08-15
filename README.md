@@ -77,3 +77,4 @@ There are two types of Export/Import
 - Hook are normal JS utility funxtions
 - Two very important functions - useState()-> used to generate Superperful State Variables in react
   -whenever a state variable is update react will rerander the components - useEffect()
+- usedEffect function is ececuted whwen body component renders as soon as the render finises the callback function useEffect gets executed

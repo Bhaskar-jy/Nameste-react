@@ -9,6 +9,14 @@
   justify-content: space-between;
   border: 1px solid black;
 }
+.footer {
+  border-radius: 10;
+  display: flex;
+  background: rgb(154, 153, 152);
+  justify-content: space-between;
+  border: 1px solid black;
+  height: 300px;
+}
 .logo {
   width: 200px;
 }
@@ -94,8 +102,11 @@
 }
 .list :hover {
   cursor: pointer;
+  border-radius: 10;
+  padding: 10px;
+  margin: 10px;
   border: 1px solid black;
-  background: rgb(248, 46, 6);
+  background: rgb(243, 240, 240);
 }
 .filter {
   display: flex;
