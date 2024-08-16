@@ -1,43 +1,50 @@
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { useParams } from "react-router-dom";
+import { MENU_API } from "../utils/constants";
 const RestorantMenu = (props) => {
-  const [resInfo, setresInfo] = useState([]);
+  const [resInfo, setresInfo] = useState(null);
+
+  const { resId } = useParams();
+
   useEffect(() => {
     fetchMenu();
   }, []);
 
   const fetchMenu = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.16363&lng=91.7611838&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      MENU_API + resId + "&catalog_qa=undefined&submitAction=ENTER"
     );
     const json = await data.json();
-    setresInfo(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    console.log(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    setresInfo(json?.data);
+    console.log(json);
   };
-  //   const { name, cuisines, costForTwo, cloudinaryImageId, avgRating } =
-  //     resInfo[0]?.info;
-  //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  return resInfo === null ? (
-    <Shimmer />
-  ) : (
+
+  if (resInfo === null) {
+    return <Shimmer />;
+  }
+  const { name, cuisines, costForTwoMessage, avgRating } =
+    resInfo?.cards[2]?.card?.card?.info;
+  const { itemCards } =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+  console.log(itemCards);
+  // json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  return (
     <div className="menu">
-      <h1>{resInfo[0]?.info?.name}</h1>
+      <h1>{name}</h1>
       <p>
-        {resInfo[0]?.info?.cuisines.join(",")} {resInfo[0]?.info?.costForTwo}
+        {cuisines?.join(",")} {costForTwoMessage}
       </p>
       <h1></h1>
-      <h1>{resInfo[0]?.info?.avgRating} Stars</h1>
+      <h1>{avgRating} Stars</h1>
 
       <h2>Menu</h2>
       <ul>
-        <li>Biryani</li>
-        <li>Burger</li>
-        <li>Pasta</li>
-        <li>Shorma</li>
+        {itemCards.map((item) => (
+          <li key={item.card.info.id}>
+            {item.card.info.name} -Rs {item.card.info.price / 100}
+          </li>
+        ))}
       </ul>
     </div>
   );
