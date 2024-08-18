@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { MENU_API } from "../utils/constants";
-const RestorantMenu = (props) => {
+const RestorantMenu = () => {
   const [resInfo, setresInfo] = useState(null);
 
   const { resId } = useParams();
@@ -28,7 +28,7 @@ const RestorantMenu = (props) => {
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   console.log(itemCards);
-  // json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+
   return (
     <div className="menu">
       <h1>{name}</h1>
