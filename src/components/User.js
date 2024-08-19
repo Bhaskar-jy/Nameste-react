@@ -3,7 +3,7 @@ const User = () => {
   const [userInfo, setuserInfo] = useState({});
   useEffect(() => {
     fetchUserInfo();
-  });
+  }, []);
   const fetchUserInfo = async () => {
     const data = await fetch("https://api.github.com/users/Bhaskar-jy");
     const json = await data.json();
