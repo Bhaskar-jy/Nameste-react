@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlieStatus";
 const Body = () => {
   //State Variable -> Super powerful variable
   const [resList1, setresList] = useState([]);
@@ -28,6 +29,15 @@ const Body = () => {
     );
   };
 
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) {
+    return (
+      <h1>
+        Looks like you are Offline!! Please check your internet connection....
+      </h1>
+    );
+  }
   return resList1?.length === 0 ? (
     <Shimmer />
   ) : (
