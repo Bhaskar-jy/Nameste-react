@@ -1,14 +1,22 @@
-import { useState } from "react";
-const User = ({ name, location, contact }) => {
-  const [count1, setCount1] = useState(0);
-
+import { useEffect, useState } from "react";
+const User = () => {
+  const [userInfo, setuserInfo] = useState({});
+  useEffect(() => {
+    fetchUserInfo();
+  });
+  const fetchUserInfo = async () => {
+    const data = await fetch("https://api.github.com/users/Bhaskar-jy");
+    const json = await data.json();
+    console.log(json);
+    setuserInfo(json);
+  };
+  const { name, location, bio, avatar_url } = userInfo;
   return (
     <div className="user-card">
-      <h5>Count : {count1}</h5>
-
+      <img src={avatar_url} />
       <h2>Name : {name}</h2>
       <h3>Location : {location}</h3>
-      <h4>Contact : {contact}</h4>
+      <h4>Bio : {bio}</h4>
     </div>
   );
 };

@@ -5,13 +5,9 @@ import { Component } from "react";
 class About extends Component {
   constructor(props) {
     super(props);
-    console.log("parent Constructor");
   }
-  componentDidMount() {
-    console.log("Parent component did mounted");
-  }
+  componentDidMount() {}
   render() {
-    console.log("Parent rendered");
     return (
       <div>
         <h1>About</h1>
@@ -26,11 +22,6 @@ class About extends Component {
             name={"Kakashi Hatake"}
             location={"Kyoto"}
             contact={"@hatakekakashi"}
-          />
-          <UserClass
-            name={"kamado Tanjiro"}
-            location={"kinochi"}
-            contact={"@tanjirokamado"}
           />
         </div>
       </div>
