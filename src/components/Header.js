@@ -13,7 +13,7 @@ const Header = () => {
       </div>
       <div className="nev-items">
         <ul>
-          <li>Online Status: {onlineStatus === true ? "✔️" : "✖️"}</li>
+          <li>Online Status: {onlineStatus === true ? "🟢" : "🔴"}</li>
           <li className="list">
             <Link to="/">Home</Link>
           </li>
@@ -22,6 +22,9 @@ const Header = () => {
           </li>
           <li className="list">
             <Link to="/contact">Contact Us</Link>
+          </li>
+          <li className="list">
+            <Link to="/grocery">Grocery</Link>
           </li>
           <li className="list">Cart</li>
           <button
