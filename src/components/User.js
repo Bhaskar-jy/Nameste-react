@@ -12,7 +12,7 @@ const User = () => {
   };
   const { name, location, bio, avatar_url } = userInfo;
   return (
-    <div className="user-card">
+    <div className="user-card m-4 p-4 items-center bg-gray-100 hover:bg-gray-300 rounded-lg">
       <img src={avatar_url} />
       <h2>Name : {name}</h2>
       <h3>Location : {location}</h3>

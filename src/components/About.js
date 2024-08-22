@@ -12,7 +12,7 @@ class About extends Component {
       <div>
         <h1>About</h1>
         <h2>This is Khakuwa Food Delivery Service </h2>
-        <div className="usercontainer">
+        <div className="usercontainer flex ">
           <User
             name={"Gabbar Saturo"}
             location={"Osaka"}

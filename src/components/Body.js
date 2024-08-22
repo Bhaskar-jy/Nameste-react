@@ -42,18 +42,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4 ">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black rounded-lg"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="serchbtn"
+            className="px-5 py-1 bg-green-200 hover:bg-green-400 m-4 rounded-lg"
             onClick={() => {
               //filter the restorant card and uptadate ui
               const felteredRestaurant = resList1.filter((res) =>
@@ -66,26 +66,28 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            console.log("Button Clicked");
-            const filteredresList = resList1.filter(
-              (res) => res.info?.avgRating > 4.4
-            );
-            if (btnNamefreact === "Top Rated Restorants") {
-              setfilteredrest(filteredresList);
-              setbtnNamereact("All Restorants");
-            } else {
-              setbtnNamereact("Top Rated Restorants");
-              setfilteredrest(resList1);
-            }
-          }}
-        >
-          {btnNamefreact}
-        </button>
+        <div className="search m-4 p-4 flex items-center">
+          <button
+            className="px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-lg"
+            onClick={() => {
+              console.log("Button Clicked");
+              const filteredresList = resList1.filter(
+                (res) => res.info?.avgRating > 4.4
+              );
+              if (btnNamefreact === "Top Rated Restorants") {
+                setfilteredrest(filteredresList);
+                setbtnNamereact("All Restorants");
+              } else {
+                setbtnNamereact("Top Rated Restorants");
+                setfilteredrest(resList1);
+              }
+            }}
+          >
+            {btnNamefreact}
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredrest?.map((restorant) => (
           <Link key={restorant.info.id} to={"/restaurant/" + restorant.info.id}>
             <RestorantCard key={restorant.info.id} resData={restorant} />
