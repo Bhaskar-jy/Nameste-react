@@ -1,4 +1,4 @@
-import RestorantCard from "./RestorantCard";
+import RestorantCard, { withPromotedLabel } from "./RestorantCard";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -10,6 +10,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredrest, setfilteredrest] = useState([]);
   const [btnNamefreact, setbtnNamereact] = useState("Top Rated Restorants");
+  const RestaurantCardPromotede = withPromotedLabel(RestorantCard);
   useEffect(() => {
     fetchData();
   }, []);
@@ -27,6 +28,7 @@ const Body = () => {
     setfilteredrest(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    console.log(resList1);
   };
 
   const onlineStatus = useOnlineStatus();
@@ -90,7 +92,14 @@ const Body = () => {
       <div className="flex flex-wrap">
         {filteredrest?.map((restorant) => (
           <Link key={restorant.info.id} to={"/restaurant/" + restorant.info.id}>
-            <RestorantCard key={restorant.info.id} resData={restorant} />
+            {restorant.info.promoted ? (
+              <RestaurantCardPromotede
+                key={restorant.info.id}
+                resData={restorant}
+              />
+            ) : (
+              <RestorantCard key={restorant.info.id} resData={restorant} />
+            )}
           </Link>
         ))}
       </div>
