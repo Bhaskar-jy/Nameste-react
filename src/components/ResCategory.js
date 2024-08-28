@@ -1,12 +1,13 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const ResCategory = (data, showItems, setShowIndex) => {
+const ResCategory = (data) => {
+  const [showItems, setShowItems] = useState(false);
   const handleClick = () => {
-    setShowIndex();
-    // setShowItems(!showItems);
+    //setShowIndex();
+    setShowItems(!showItems);
   };
-  console.log(setShowIndex);
+  // console.log(setShowIndex);
   return (
     <div className="text-center">
       <div className="rounded-lg w-6/12 bg-gray-100 hover:bg-gray-200 shadow-lg p-4 mx-auto my-4 ">

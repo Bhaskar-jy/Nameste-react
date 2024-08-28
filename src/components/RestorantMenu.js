@@ -13,8 +13,8 @@ const RestorantMenu = () => {
   }
   const { name, cuisines, costForTwoMessage, avgRating } =
     resInfo?.cards[2]?.card?.card?.info;
-  // const { itemCards } =
-  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+  const { itemCards } =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
 
   const categories =
@@ -38,9 +38,9 @@ const RestorantMenu = () => {
         <ResCategory
           key={category?.card?.card?.title}
           data={category?.card?.card}
-          // showItems={false}
-          showItems={index === showIndex ? true : false}
-          setShowIndex={() => setShowIndex(index)}
+          showItems={false}
+          //showItems={index === showIndex ? true : false}
+          //setShowIndex={() => setShowIndex(index)}
         />
       ))}
     </div>
