@@ -88,6 +88,11 @@ const Body = () => {
             {btnNamefreact}
           </button>
         </div>
+
+        <div className="search m-4 p-4 flex items-center">
+          <label>User Name : </label>
+          <input className="border border-black"></input>
+        </div>
       </div>
       <div className="flex flex-wrap">
         {filteredrest?.map((restorant) => (
