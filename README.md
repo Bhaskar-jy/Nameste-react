@@ -80,6 +80,20 @@ There are two types of Export/Import
 - usedEffect function is ececuted whwen body component renders as soon as the render finises the callback function useEffect gets executed
 
 # Routing in Web Apps
-- Clint Side Routing -> 
 
-- Server Side Routing -> 
+- Clint Side Routing ->
+
+- Server Side Routing ->
+
+# Redux Toolkit
+
+- install liberaries
+
+  - npm install @reduxjs/toolkit
+  - npm install react-redux
+
+- Build our redux store
+- connect our store to our app
+- create a Slice(cart-slice)
+- dispatch(action)
+  -Selector

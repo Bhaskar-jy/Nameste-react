@@ -10,8 +10,9 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestorantMenu from "./components/RestorantMenu";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
-//import Grocery from "./components/Grocery";
-
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 // Chunking
 // Code Soliting
 // Dynamic BUndling
@@ -33,13 +34,15 @@ const Applayout = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+          {/* <Footer /> */}
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -52,6 +55,7 @@ const appRouter = createBrowserRouter([
         path: "/",
         element: <Body />,
       },
+
       {
         path: "/about",
         element: (
@@ -60,6 +64,7 @@ const appRouter = createBrowserRouter([
           </Suspense>
         ),
       },
+
       {
         path: "/contact",
         element: <Contact />,
@@ -76,16 +81,12 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:resId",
         element: <RestorantMenu />,
       },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
     ],
     errorElement: <Error />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
   },
 ]);
 
